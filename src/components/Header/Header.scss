@@ -1,0 +1,21 @@
+@import "../../styles/variables";
+
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-grey;
+
+  &--nav {
+    ul {
+      list-style: none;
+      li {
+        display: inline-block;
+        text-transform: uppercase;
+        padding: 0 1rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
