@@ -3,12 +3,20 @@ import { useState } from 'react';
 import Product from '../../models/Product';
 import './ProductItem.scss';
 
-const ProductItem: React.FC<{ product: Product }> = ({ product }) => {
+const ProductItem: React.FC<{
+  product: Product;
+  onAdd: (product: Product) => void;
+}> = (props) => {
+  const { product } = props;
   const [showDescription, setShowDescription] = useState(false);
 
   // Format Price
   const formattedPrice: string = product.price.toFixed(2);
   const [dollars, cents] = formattedPrice.split('.');
+
+  const clickHandler = () => {
+    props.onAdd(product);
+  };
 
   return (
     <div className='product-card'>
@@ -35,7 +43,9 @@ const ProductItem: React.FC<{ product: Product }> = ({ product }) => {
         </div>
       </div>
       <div className='product-card__actions'>
-        <button className='product-card__actions_add'>Add to cart</button>
+        <button className='product-card__actions_add' onClick={clickHandler}>
+          Add to cart
+        </button>
       </div>
     </div>
   );

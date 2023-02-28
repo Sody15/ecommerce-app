@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import '../../styles/variables';
 
 .cart-btn {
   background-color: $color-red;
@@ -10,11 +10,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   cursor: pointer;
-  &--logo {
+  &__logo {
     fill: white;
     width: 1.5rem;
     height: 1.5rem;
     transform: translateX(-0.1rem);
+  }
+  &__num {
+    color: white;
+    position: absolute;
+    background-color: $color-yellow;
+    top: -0.4rem;
+    right: -0.5rem;
+    border-radius: 50%;
+    padding: 0.3rem;
   }
 }

@@ -15,12 +15,16 @@ const ProductsList = () => {
     }, 200);
   }, []);
 
+  const addItem = (product: Product) => {
+    console.log(product);
+  };
+
   return (
     <>
       <p>16 Product(s) found</p>
       <div className='product-list-container'>
         {products.map((p) => (
-          <ProductItem product={p} key={p.id} />
+          <ProductItem product={p} key={p.id} onAdd={addItem} />
         ))}
       </div>
     </>
