@@ -1,4 +1,17 @@
-const FilterButton: React.FC<{ value: string }> = (props) => {
-  return <button type='button'>{props.value}</button>;
+import './FilterButton.scss';
+
+const FilterButton: React.FC<{
+  value: string;
+  onSelect: (val: string) => void;
+}> = (props) => {
+  const clickHandler = () => {
+    props.onSelect(props.value);
+  };
+
+  return (
+    <button className='filter-btn' type='button' onClick={clickHandler}>
+      {props.value}
+    </button>
+  );
 };
 export default FilterButton;

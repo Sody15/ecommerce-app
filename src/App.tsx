@@ -1,15 +1,21 @@
-import "./App.scss";
-import Filter from "./components/Filter/Filter";
-import Header from "./components/Header/Header";
+import './App.scss';
+import Filter from './components/Filter/Filter';
+import Header from './components/Header/Header';
+import ProductsList from './components/Products/ProductsList';
 
 function App() {
   return (
-    <>
-      <Header />
-      <main className="main-content">
+    <main className='main-content'>
+      <div className='header-container'>
+        <Header />
+      </div>
+      <div className='filter-container'>
         <Filter />
-      </main>
-    </>
+      </div>
+      <div className='products-container'>
+        <ProductsList />
+      </div>
+    </main>
   );
 }
 
