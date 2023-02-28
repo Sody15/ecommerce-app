@@ -9,7 +9,7 @@ const FilterButton: React.FC<{
   };
 
   return (
-    <button className='filter-btn' type='button' onClick={clickHandler}>
+    <button className='btn filter-btn' type='button' onClick={clickHandler}>
       {props.value}
     </button>
   );

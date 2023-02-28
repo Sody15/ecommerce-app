@@ -1,22 +1,28 @@
 import { DUMMY_DATA } from '../../dummy-data';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import './ProductList.scss';
 
 import Product from '../../models/Product';
 import ProductItem from './ProductItem';
 
-const ProductsList = () => {
-  const [products, setProducts] = useState<Product[]>([]);
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { addItem } from '../../store/cartSlice';
+import { setProducts } from '../../store/productSlice';
 
+const ProductsList = () => {
+  const products: Product[] = useAppSelector((state) => state.products.items);
+  const dispatch = useAppDispatch();
+
+  // Initialize Dummy Data
   useEffect(() => {
     setTimeout(() => {
-      setProducts(DUMMY_DATA);
+      dispatch(setProducts(DUMMY_DATA));
     }, 200);
-  }, []);
+  }, [dispatch]);
 
-  const addItem = (product: Product) => {
-    console.log(product);
+  const addToCart = (product: Product) => {
+    dispatch(addItem(product));
   };
 
   return (
@@ -24,7 +30,7 @@ const ProductsList = () => {
       <p>16 Product(s) found</p>
       <div className='product-list-container'>
         {products.map((p) => (
-          <ProductItem product={p} key={p.id} onAdd={addItem} />
+          <ProductItem product={p} key={p.id} onAdd={addToCart} />
         ))}
       </div>
     </>

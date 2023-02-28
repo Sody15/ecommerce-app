@@ -1,20 +1,50 @@
-import { useState } from 'react';
-
 import './Cart.scss';
 import { ReactComponent as CartLogo } from '../../assets/cart.svg';
-import Product from '../../models/Product';
-import { DUMMY_DATA } from '../../dummy-data';
+import { useAppSelector } from '../../store/hooks';
+import { useState } from 'react';
+import CartItemComponent from './CartItem';
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState<Product[]>(DUMMY_DATA);
+  const numItems = useAppSelector((state) => state.cart.totalQuantity);
+  const itemsInCart = useAppSelector((state) => state.cart.items);
+
+  const [showCart, setShowCart] = useState(false);
+
+  const cartLogo = (
+    <>
+      <CartLogo className='cart-btn__logo' />
+      <div className='cart-btn__num'>{numItems}</div>
+    </>
+  );
 
   return (
-    <button className='cart-btn'>
-      <CartLogo className='cart-btn__logo' />
-      {cartItems.length > 0 && (
-        <div className='cart-btn__num'>{cartItems.length}</div>
+    <>
+      <button className='btn cart-btn' onClick={() => setShowCart(true)}>
+        {cartLogo}
+      </button>
+      {showCart && (
+        <div className='cart'>
+          <button
+            className='btn cart__close'
+            onClick={() => setShowCart(false)}
+          >
+            X
+          </button>
+          <div className='cart__header'>
+            <div className='cart__header__logo'>{cartLogo}</div>
+            <h3>Cart</h3>
+          </div>
+          <div className='cart__items'>
+            {itemsInCart.map((item) => (
+              <CartItemComponent key={item.id} item={item} />
+            ))}
+          </div>
+          <div className='cart__actions'>
+            <button className='btn'>Checkout</button>
+          </div>
+        </div>
       )}
-    </button>
+    </>
   );
 };
 

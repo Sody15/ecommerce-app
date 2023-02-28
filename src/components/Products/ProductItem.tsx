@@ -43,7 +43,10 @@ const ProductItem: React.FC<{
         </div>
       </div>
       <div className='product-card__actions'>
-        <button className='product-card__actions_add' onClick={clickHandler}>
+        <button
+          className='btn product-card__actions_add'
+          onClick={clickHandler}
+        >
           Add to cart
         </button>
       </div>

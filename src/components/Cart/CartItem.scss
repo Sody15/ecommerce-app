@@ -1,0 +1,51 @@
+@import '../../styles/variables';
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  border-top: 2px solid black;
+  padding: 1rem 0;
+
+  img {
+    height: 100px;
+  }
+
+  &__details {
+    flex-grow: 1;
+    padding: 1rem;
+    h4 {
+      color: white;
+      margin: 0;
+    }
+    p {
+      margin: 0;
+      font-size: 1rem;
+      color: grey;
+    }
+  }
+
+  &__add-remove {
+    text-align: right;
+    h4 {
+      color: $color-yellow;
+      margin: 0;
+    }
+    &__close {
+      background: none;
+      color: white;
+      font-weight: 700;
+    }
+    &__price {
+      padding: 1rem 0;
+    }
+    &__minus,
+    &__plus {
+      display: inline-block;
+      height: 2rem;
+      width: 2rem;
+      background-color: black;
+      color: white;
+      font-size: 1.2rem;
+    }
+  }
+}

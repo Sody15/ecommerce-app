@@ -1,14 +1,13 @@
 @import '../../styles/variables';
+@import '../../styles/mixins';
 
 .product-card {
   &__img {
     &-container {
+      @include flex-center;
       position: relative;
       height: 350px;
       width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       img {
         height: 100%;
         width: 100%;
@@ -54,14 +53,11 @@
   }
   &__actions {
     &_add {
-      outline: none;
-      border: none;
       background-color: black;
       color: white;
       width: 100%;
       padding: 1rem 0;
       font-size: 1rem;
-      cursor: pointer;
       &:hover {
         background-color: $color-yellow;
       }
