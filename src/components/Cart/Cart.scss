@@ -85,7 +85,21 @@
     // flex-grow: 1;
   }
 
-  &__actions {
+  &__footer {
+    &__subtotal {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      p {
+        text-transform: uppercase;
+        color: grey;
+      }
+      h3 {
+        color: $color-yellow;
+        font-size: 1.5rem;
+      }
+    }
     button {
       width: 100%;
       background-color: black;

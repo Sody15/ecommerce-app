@@ -7,6 +7,9 @@ import CartItemComponent from './CartItem';
 const Cart = () => {
   const numItems = useAppSelector((state) => state.cart.totalQuantity);
   const itemsInCart = useAppSelector((state) => state.cart.items);
+  const subtotal = useAppSelector(
+    (state) => `$${state.cart.totalCost.toFixed(2)}`
+  );
 
   const [showCart, setShowCart] = useState(false);
 
@@ -39,7 +42,11 @@ const Cart = () => {
               <CartItemComponent key={item.id} item={item} />
             ))}
           </div>
-          <div className='cart__actions'>
+          <div className='cart__footer'>
+            <div className='cart__footer__subtotal'>
+              <p>Subtotal</p>
+              <h3>{subtotal}</h3>
+            </div>
             <button className='btn'>Checkout</button>
           </div>
         </div>

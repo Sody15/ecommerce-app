@@ -1,8 +1,28 @@
 import CartItem from '../../models/CartItem';
+import { useAppDispatch } from '../../store/hooks';
 import './CartItem.scss';
+import {
+  addItem,
+  removeItem,
+  removeAllItemsOfType,
+} from '../../store/cartSlice';
 
 const CartItemComponent: React.FC<{ item: CartItem }> = ({ item }) => {
+  const dispatch = useAppDispatch();
+
   const formattedPrice = `$${item.price.toFixed(2)}`;
+
+  const onRemoveItems = () => {
+    dispatch(removeAllItemsOfType(item));
+  };
+
+  const onAddQuantity = () => {
+    dispatch(addItem(item));
+  };
+
+  const onRemoveQuantity = () => {
+    dispatch(removeItem(item));
+  };
 
   return (
     <div className='cart-item'>
@@ -15,10 +35,25 @@ const CartItemComponent: React.FC<{ item: CartItem }> = ({ item }) => {
         <p>Quantity: {item.quantity}</p>
       </div>
       <div className='cart-item__add-remove'>
-        <button className='btn cart-item__add-remove__close'>X</button>
+        <button
+          className='btn cart-item__add-remove__close'
+          onClick={onRemoveItems}
+        >
+          X
+        </button>
         <h4 className='cart-item__add-remove__price'>{formattedPrice}</h4>
-        <button className='btn  cart-item__add-remove__minus'>-</button>
-        <button className='btn cart-item__add-remove__plus'>+</button>
+        <button
+          className='btn  cart-item__add-remove__minus'
+          onClick={onRemoveQuantity}
+        >
+          -
+        </button>
+        <button
+          className='btn cart-item__add-remove__plus'
+          onClick={onAddQuantity}
+        >
+          +
+        </button>
       </div>
     </div>
   );

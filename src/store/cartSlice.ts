@@ -22,16 +22,19 @@ const getTotalCost = (items: CartItem[]): number => {
   return items.reduce((accum, curr) => curr.price * curr.quantity + accum, 0);
 };
 
+const getExistingIndex = (id: number, items: CartItem[]): number => {
+  return items.findIndex((cartItem) => cartItem.id === id);
+};
+
 export const cartSlice = createSlice({
   name: 'cart',
   initialState: initalCartState,
   reducers: {
     addItem: (state, action: PayloadAction<Product>) => {
-      const existingIndex = state.items.findIndex(
-        (cartItem) => cartItem.id === action.payload.id
-      );
+      const existingIndex = getExistingIndex(action.payload.id, state.items);
 
-      if (existingIndex > -1) {
+      if (existingIndex !== -1) {
+        // Update Quantity
         const existingItem = state.items[existingIndex];
         state.items[existingIndex] = {
           ...existingItem,
@@ -49,19 +52,26 @@ export const cartSlice = createSlice({
       state.totalQuantity = getTotalQuantity(state.items);
       state.totalCost = getTotalCost(state.items);
     },
-    removeItem: (state, action: PayloadAction<Product>) => {
-      // state.quantity--;
+    removeItem: (state, action: PayloadAction<CartItem>) => {
+      state.items = state.items
+        .map((cartItem) => {
+          if (cartItem.id === action.payload.id) {
+            return { ...cartItem, quantity: cartItem.quantity - 1 };
+          }
+          return cartItem;
+        })
+        .filter((i) => i.quantity !== 0);
 
       state.totalQuantity = getTotalQuantity(state.items);
       state.totalCost = getTotalCost(state.items);
     },
-    removeAllItemsOfType: (state, action: PayloadAction<Product>) => {
-      // let totalQuantity = 0;
-      // state.items.reduce(item => {
-      //   if (item.id === action.payload.id) {
-      //   }
-      // })
-      // state.quantity - action.payload.
+    removeAllItemsOfType: (state, action: PayloadAction<CartItem>) => {
+      state.items = state.items.filter(
+        (cartItem) => cartItem.id !== action.payload.id
+      );
+
+      state.totalQuantity = getTotalQuantity(state.items);
+      state.totalCost = getTotalCost(state.items);
     },
   },
 });
