@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import '../../styles/variables';
 
 .header {
   display: flex;
@@ -7,14 +7,20 @@
   align-items: center;
   background-color: $color-grey;
 
-  &--nav {
+  &__nav {
     ul {
       list-style: none;
+      display: flex;
       li {
         display: inline-block;
         text-transform: uppercase;
-        padding: 0 1rem;
+        padding: 1rem;
         cursor: pointer;
+        border: 2px solid $color-grey;
+        &:hover {
+          color: $color-red;
+          border-bottom: 2px solid $color-red;
+        }
       }
     }
   }

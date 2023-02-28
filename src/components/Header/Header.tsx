@@ -1,11 +1,11 @@
-import Cart from "../Cart/Cart";
-import "./Header.scss";
+import Cart from '../Cart/Cart';
+import './Header.scss';
 
 const Header = () => {
   return (
-    <header className="header">
-      <div className="header--logo">WD</div>
-      <nav className="header--nav">
+    <header className='header'>
+      <h1 className='header__logo'>EC</h1>
+      <nav className='header__nav'>
         <ul>
           <li>News</li>
           <li>Watches</li>
