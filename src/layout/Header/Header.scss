@@ -22,6 +22,10 @@
           border-bottom: 2px solid $color-red;
         }
       }
+      .active li {
+        color: $color-red;
+        border-bottom: 2px solid $color-red;
+      }
     }
   }
 }

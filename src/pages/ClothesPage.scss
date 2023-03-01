@@ -1,0 +1,15 @@
+@import '../styles/global';
+
+.filter-container {
+  grid-area: filter;
+}
+
+.products-container {
+  grid-area: products;
+}
+
+.clothes-page {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-areas: 'filter products';
+}
