@@ -3,10 +3,12 @@ import Product from '../models/Product';
 
 export interface ProductState {
   items: Product[];
+  filterValue: string | null;
 }
 
 const initalProductsState: ProductState = {
   items: [],
+  filterValue: null,
 };
 
 export const productsSlice = createSlice({
@@ -16,9 +18,12 @@ export const productsSlice = createSlice({
     setProducts: (state, action: PayloadAction<Product[]>) => {
       state.items = action.payload;
     },
+    filterProducts: (state, action: PayloadAction<string>) => {
+      state.filterValue = action.payload;
+    },
   },
 });
 
-export const { setProducts } = productsSlice.actions;
+export const { setProducts, filterProducts } = productsSlice.actions;
 
 export default productsSlice.reducer;

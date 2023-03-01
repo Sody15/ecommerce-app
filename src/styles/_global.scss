@@ -1,4 +1,4 @@
-.btn {
+button {
   border: none;
   outline: none;
   cursor: pointer;
@@ -7,4 +7,11 @@
 a {
   color: inherit;
   text-decoration: none;
+}
+
+input[type='text'] {
+  outline: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+  text-transform: uppercase;
 }

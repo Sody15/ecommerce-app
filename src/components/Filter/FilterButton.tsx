@@ -2,15 +2,24 @@ import './FilterButton.scss';
 
 const FilterButton: React.FC<{
   value: string;
-  onSelect: (val: string) => void;
-}> = (props) => {
-  const clickHandler = () => {
-    props.onSelect(props.value);
+  isActive: boolean;
+  onFilter: (filterVal: string) => void;
+}> = ({ value, isActive, onFilter }) => {
+  const onFilterHandler = () => {
+    if (isActive) {
+      onFilter('');
+    } else {
+      onFilter(value);
+    }
   };
 
   return (
-    <button className='btn filter-btn' type='button' onClick={clickHandler}>
-      {props.value}
+    <button
+      className={`filter-btn ${isActive ? 'active' : ''}`}
+      type='button'
+      onClick={onFilterHandler}
+    >
+      {value}
     </button>
   );
 };

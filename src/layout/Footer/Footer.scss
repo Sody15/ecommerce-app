@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+footer {
+  background-color: $color-dark-grey;
+  height: 20rem;
+  color: white;
+  padding: 3rem;
+  margin-top: 2rem;
+
+  .footer-row {
+    display: grid;
+    grid-template-columns: 30% 40% repeat(2, 1fr);
+    column-gap: 2rem;
+  }
+}

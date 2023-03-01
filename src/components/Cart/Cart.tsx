@@ -22,15 +22,12 @@ const Cart = () => {
 
   return (
     <>
-      <button className='btn cart-btn' onClick={() => setShowCart(true)}>
+      <button className='cart-btn' onClick={() => setShowCart(true)}>
         {cartLogo}
       </button>
       {showCart && (
         <div className='cart'>
-          <button
-            className='btn cart__close'
-            onClick={() => setShowCart(false)}
-          >
+          <button className=' cart__close' onClick={() => setShowCart(false)}>
             X
           </button>
           <div className='cart__header'>
@@ -47,7 +44,7 @@ const Cart = () => {
               <p>Subtotal</p>
               <h3>{subtotal}</h3>
             </div>
-            <button className='btn'>Checkout</button>
+            <button>Checkout</button>
           </div>
         </div>
       )}
