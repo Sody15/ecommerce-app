@@ -27,7 +27,7 @@ const ProductsList = () => {
 
   return (
     <>
-      <p>16 Product(s) found</p>
+      <p>{products.length} Product(s) found</p>
       <div className='product-list-container'>
         {products.map((p) => (
           <ProductItem product={p} key={p.id} onAdd={addToCart} />
