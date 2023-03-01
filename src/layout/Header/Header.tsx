@@ -41,7 +41,9 @@ const Header = () => {
           </NavLink>
         </ul>
       </nav>
-      <Cart />
+      <div className='header__cart-container'>
+        <Cart />
+      </div>
     </header>
   );
 };

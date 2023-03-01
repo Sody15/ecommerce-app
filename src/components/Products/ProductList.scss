@@ -1,6 +1,15 @@
+@import '../../styles/mixins';
+
 .product-list-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 1.5rem;
-  row-gap: 1.5rem;
+  @include sm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  @include lg {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+  }
 }

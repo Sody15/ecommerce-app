@@ -1,22 +1,35 @@
 @import '../../styles/variables';
+@import '../../styles/mixins';
 
 .header {
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  background-color: transparent;
+  background-color: $color-grey;
+  position: sticky;
+  top: 0;
+  z-index: 500;
+  flex-direction: column;
+  box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.1);
+
+  @include md {
+    flex-direction: row;
+    box-shadow: none;
+  }
 
   &__nav {
     ul {
+      margin: 0;
       list-style: none;
       display: flex;
+      padding: 0;
       li {
         display: inline-block;
         text-transform: uppercase;
         padding: 1rem;
         cursor: pointer;
-        border: 2px solid transparent;
+        border: 2px solid $color-grey;
         &:hover {
           color: $color-red;
           border-bottom: 2px solid $color-red;
@@ -26,6 +39,14 @@
         color: $color-red;
         border-bottom: 2px solid $color-red;
       }
+    }
+  }
+  &__cart-container {
+    position: fixed;
+    right: 4rem;
+    top: 2rem;
+    @include md {
+      position: initial;
     }
   }
 }

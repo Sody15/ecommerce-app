@@ -3,6 +3,7 @@
 
 .product-card {
   position: relative;
+
   &__shipping-tag {
     background-color: black;
     color: white;
@@ -16,7 +17,6 @@
     &-container {
       @include flex-center;
       position: relative;
-      height: 350px;
       width: 100%;
       img {
         height: 100%;

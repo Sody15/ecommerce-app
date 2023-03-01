@@ -6,7 +6,7 @@ const Root = () => {
   return (
     <>
       <Header />
-      <main>
+      <main style={{ paddingTop: '1rem' }}>
         <Outlet />
       </main>
       <Footer />

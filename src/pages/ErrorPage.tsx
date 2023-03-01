@@ -6,7 +6,7 @@ const ErrorPage = () => {
   return (
     <>
       <Header />
-      <div>Error Page</div>
+      <div style={{ padding: '1rem 2rem' }}>Error Page</div>
       <Footer />
     </>
   );
