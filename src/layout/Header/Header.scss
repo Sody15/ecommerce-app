@@ -5,7 +5,7 @@
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  background-color: $color-grey;
+  background-color: transparent;
 
   &__nav {
     ul {
@@ -16,7 +16,7 @@
         text-transform: uppercase;
         padding: 1rem;
         cursor: pointer;
-        border: 2px solid $color-grey;
+        border: 2px solid transparent;
         &:hover {
           color: $color-red;
           border-bottom: 2px solid $color-red;

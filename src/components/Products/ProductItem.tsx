@@ -20,6 +20,9 @@ const ProductItem: React.FC<{
 
   return (
     <div className='product-card'>
+      {product.isFreeShipping && (
+        <span className='product-card__shipping-tag'>Free shipping</span>
+      )}
       <div
         className='product-card__img-container'
         onMouseEnter={() => setShowDescription(true)}

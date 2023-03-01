@@ -2,6 +2,16 @@
 @import '../../styles/mixins';
 
 .product-card {
+  position: relative;
+  &__shipping-tag {
+    background-color: black;
+    color: white;
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+  }
   &__img {
     &-container {
       @include flex-center;
