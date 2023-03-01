@@ -22,8 +22,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build --stats",
-    "analyze": "webpack-bundle-analyzer build/bundle-stats.json",
+    "build": "react-scripts build",
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -46,6 +46,6 @@
     ]
   },
   "devDependencies": {
-    "webpack-bundle-analyzer": "^4.8.0"
+    "source-map-explorer": "^2.5.3"
   }
 }
