@@ -22,7 +22,7 @@
         height: 100%;
         width: 100%;
       }
-      &:hover::before {
+      &.has-desc:hover::before {
         content: '';
         position: absolute;
         width: 100%;
@@ -43,7 +43,7 @@
 
     &-title {
       text-align: center;
-      margin-bottom: 0.5rem;
+      height: 2rem;
     }
 
     &-separator {

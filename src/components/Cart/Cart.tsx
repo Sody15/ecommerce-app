@@ -17,7 +17,8 @@ const Cart = () => {
   useEffect(() => {
     if (numItems !== 0) {
       setAddedToCart(true);
-      setTimeout(() => setAddedToCart(false), 300);
+      const timer = setTimeout(() => setAddedToCart(false), 300);
+      return () => clearTimeout(timer);
     }
   }, [numItems]);
 

@@ -24,7 +24,9 @@ const ProductItem: React.FC<{
         <span className='product-card__shipping-tag'>Free shipping</span>
       )}
       <div
-        className='product-card__img-container'
+        className={`product-card__img-container ${
+          product.description ? 'has-desc' : ''
+        }`}
         onMouseEnter={() => setShowDescription(true)}
         onMouseLeave={() => setShowDescription(false)}
       >
