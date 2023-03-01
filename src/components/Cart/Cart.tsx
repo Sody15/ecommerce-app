@@ -1,7 +1,7 @@
 import './Cart.scss';
 import { ReactComponent as CartLogo } from '../../assets/cart.svg';
 import { useAppSelector } from '../../store/hooks';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CartItemComponent from './CartItem';
 
 const Cart = () => {
@@ -11,12 +11,22 @@ const Cart = () => {
     (state) => `$${state.cart.totalCost.toFixed(2)}`
   );
 
+  const [addedToCart, setAddedToCart] = useState(false);
+  const numAnimateClass = addedToCart ? 'cart-btn__num pop' : 'cart-btn__num';
+
+  useEffect(() => {
+    if (numItems !== 0) {
+      setAddedToCart(true);
+      setTimeout(() => setAddedToCart(false), 300);
+    }
+  }, [numItems]);
+
   const [showCart, setShowCart] = useState(false);
 
   const cartLogo = (
     <>
       <CartLogo className='cart-btn__logo' />
-      <div className='cart-btn__num'>{numItems}</div>
+      <div className={numAnimateClass}>{numItems}</div>
     </>
   );
 
