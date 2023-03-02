@@ -45,10 +45,11 @@
   }
   &__cart-container {
     position: fixed;
-    right: 3rem;
+    right: 6rem;
     top: 1rem;
     @include md {
       position: initial;
+      right: 3rem;
     }
   }
 }
