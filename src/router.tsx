@@ -5,6 +5,7 @@ import ClothesPage from './pages/ClothesPage';
 import ErrorPage from './pages/ErrorPage';
 
 import HomePage from './pages/HomePage';
+import { loader as clothesLoader } from './pages/ClothesPage';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
       {
         path: 'clothes',
         element: <ClothesPage />,
+        loader: clothesLoader,
       },
     ],
   },
