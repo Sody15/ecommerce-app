@@ -29,34 +29,20 @@
     }
   }
 
-  &__nav {
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      @include sm {
-        flex-direction: row;
-      }
-      li {
-        display: inline-block;
-        text-transform: uppercase;
-        padding: 1rem;
-        cursor: pointer;
-        border: 2px solid $color-grey;
-        &:hover {
-          color: $color-red;
-          border-bottom: 2px solid $color-red;
-        }
-      }
-      .active li {
-        color: $color-red;
-        border-bottom: 2px solid $color-red;
-      }
+  &__menu--mobile {
+    display: block;
+    @include sm {
+      display: none;
     }
   }
+
+  &__menu--desktop {
+    display: none;
+    @include sm {
+      display: block;
+    }
+  }
+
   &__cart-container {
     position: fixed;
     right: 3rem;
