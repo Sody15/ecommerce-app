@@ -5,6 +5,8 @@
   background-color: $color-light-grey;
   height: 2.5rem;
   width: 2.5rem;
+  min-width: 50px;
+  min-height: 50px;
   font-size: 0.8rem;
   &:hover {
     border: 2px solid $color-red;
