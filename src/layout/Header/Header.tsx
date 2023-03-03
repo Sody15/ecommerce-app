@@ -4,19 +4,19 @@ import './Header.scss';
 import Menu from './Menu';
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const [isMenuOpenMobile, setIsMenuOpenMobile] = useState(false);
 
   return (
     <header className='header'>
       <h1 className='header__logo'>EC</h1>
       <button
         className='header__menu-btn'
-        onClick={() => setIsMenuOpen((prevState) => !prevState)}
+        onClick={() => setIsMenuOpenMobile((prevState) => !prevState)}
       >
         Menu
       </button>
       <div className='header__menu--mobile'>
-        <Menu isOpen={isMenuOpen} />
+        <Menu isOpen={isMenuOpenMobile} />
       </div>{' '}
       <div className='header__menu--desktop'>
         <Menu isOpen={true} />
