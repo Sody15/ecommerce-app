@@ -1,13 +1,12 @@
 @import '../../styles/mixins';
 
 .product-list-container {
-  @include sm {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-  }
-  @include lg {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+
+  @include md {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 1.5rem;

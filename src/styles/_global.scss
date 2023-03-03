@@ -2,6 +2,10 @@ button {
   border: none;
   outline: none;
   cursor: pointer;
+  transition: all 0.2s ease-in;
+  &:active {
+    transform: scale(1.07);
+  }
 }
 
 a {

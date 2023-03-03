@@ -42,15 +42,20 @@ const CartItemComponent: React.FC<{ item: CartItem }> = ({ item }) => {
           X
         </button>
         <h4 className='cart-item__add-remove__price'>{formattedPrice}</h4>
-        <button
-          className='cart-item__add-remove__minus'
-          onClick={onRemoveQuantity}
-        >
-          -
-        </button>
-        <button className='cart-item__add-remove__plus' onClick={onAddQuantity}>
-          +
-        </button>
+        <div>
+          <button
+            className='cart-item__add-remove__minus'
+            onClick={onRemoveQuantity}
+          >
+            -
+          </button>
+          <button
+            className='cart-item__add-remove__plus'
+            onClick={onAddQuantity}
+          >
+            +
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-@import '../styles/global';
+@import '../styles/mixins';
 
 .filter-container {
   grid-area: filter;
@@ -9,8 +9,14 @@
 }
 
 .clothes-page {
-  display: grid;
-  grid-template-columns: 20% 80%;
-  grid-template-areas: 'filter products';
-  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @include sm {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-areas: 'filter products';
+    min-height: 50vh;
+  }
 }

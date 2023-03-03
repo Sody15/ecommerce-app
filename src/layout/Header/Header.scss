@@ -20,12 +20,26 @@
     padding: 0 2rem;
   }
 
+  &__menu-btn {
+    text-transform: uppercase;
+    padding: 1rem;
+    background-color: transparent;
+    @include sm {
+      display: none;
+    }
+  }
+
   &__nav {
     ul {
       margin: 0;
+      padding: 0;
       list-style: none;
       display: flex;
-      padding: 0;
+      flex-direction: column;
+      align-items: center;
+      @include sm {
+        flex-direction: row;
+      }
       li {
         display: inline-block;
         text-transform: uppercase;
@@ -45,11 +59,10 @@
   }
   &__cart-container {
     position: fixed;
-    right: 6rem;
+    right: 3rem;
     top: 1rem;
     @include md {
       position: initial;
-      right: 3rem;
     }
   }
 }

@@ -3,6 +3,7 @@
 .cart-item {
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
   border-top: 2px solid black;
   padding: 1rem 0;
 
@@ -12,7 +13,6 @@
 
   &__details {
     flex-grow: 1;
-    padding: 1rem;
     h4 {
       color: white;
       margin: 0;

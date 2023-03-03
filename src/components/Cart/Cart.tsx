@@ -41,21 +41,23 @@ const Cart = () => {
           <button className=' cart__close' onClick={() => setShowCart(false)}>
             X
           </button>
-          <div className='cart__header'>
-            <div className='cart__header__logo'>{cartLogo}</div>
-            <h3>Cart</h3>
-          </div>
-          <div className='cart__items'>
-            {itemsInCart.map((item) => (
-              <CartItemComponent key={item.id} item={item} />
-            ))}
-          </div>
-          <div className='cart__footer'>
-            <div className='cart__footer__subtotal'>
-              <p>Subtotal</p>
-              <h3>{subtotal}</h3>
+          <div className='cart-container'>
+            <div className='cart__header'>
+              <div className='cart__header__logo'>{cartLogo}</div>
+              <h3>Cart</h3>
             </div>
-            <button>Checkout</button>
+            <div className='cart__items'>
+              {itemsInCart.map((item) => (
+                <CartItemComponent key={item.id} item={item} />
+              ))}
+            </div>
+            <div className='cart__footer'>
+              <div className='cart__footer__subtotal'>
+                <p>Subtotal</p>
+                <h3>{subtotal}</h3>
+              </div>
+              <button>Checkout</button>
+            </div>
           </div>
         </div>
       )}
