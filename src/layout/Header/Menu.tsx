@@ -7,8 +7,8 @@ interface MenuItem {
 }
 
 const menuItems: MenuItem[] = [
-  { name: 'News', route: '/' },
-  { name: 'Clothes', route: 'clothes' },
+  { name: 'News', route: '/news' },
+  { name: 'Clothes', route: '/' },
   { name: 'Accessories', route: 'accessories' },
   { name: 'Watch Bands', route: 'bands' },
   { name: 'Gift Finder', route: 'gifts' },

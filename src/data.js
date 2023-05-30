@@ -1,4 +1,4 @@
-export const DUMMY_DATA = [
+export const DATA = [
   {
     availableSizes: ['X', 'L', 'XL', 'XXL'],
     currencyFormat: '$',

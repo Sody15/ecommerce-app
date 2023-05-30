@@ -4,21 +4,16 @@ import Root from './layout/Root/Root';
 import ClothesPage from './pages/ClothesPage';
 import ErrorPage from './pages/ErrorPage';
 
-import HomePage from './pages/HomePage';
 import { loader as clothesLoader } from './pages/ClothesPage';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '',
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
       {
-        index: true,
-        element: <HomePage />,
-      },
-      {
-        path: 'clothes',
+        path: '',
         element: <ClothesPage />,
         loader: clothesLoader,
       },
