@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom';
 import './Menu.scss';
 
 interface MenuItem {
@@ -20,13 +19,7 @@ const Menu: React.FC<{ isOpen: boolean }> = ({ isOpen }) => {
       {isOpen && (
         <ul>
           {menuItems.map((item) => (
-            <NavLink
-              key={item.name}
-              to={item.route}
-              className={({ isActive }) => (isActive ? 'active' : undefined)}
-            >
-              <li>{item.name}</li>
-            </NavLink>
+            <li>{item.name}</li>
           ))}
         </ul>
       )}
