@@ -6,13 +6,5 @@ footer {
   color: white;
   padding: 3rem;
   margin-top: 2rem;
-
-  .footer-row {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    @include sm {
-      flex-direction: row;
-    }
-  }
+  height: 10rem;
 }
